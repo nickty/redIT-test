@@ -1,10 +1,15 @@
-// app variable in containing the express app with initially invoked.
-const app = require("express")();
+const express = require("express");
+const bodyParser = require("body-parser");
+const app = express();
 
 const { getFilms } = require("./controllers/api_endpoint");
 
+// parse application/json
+app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
 // Route for getting all films data
-app.get("/api/v1/films", getFilms);
+app.get("/api/v1/people", getFilms);
 
 const port = 5000;
 
