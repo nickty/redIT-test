@@ -6,8 +6,6 @@ const getFilms = async (req, res) => {
   await getAllStarwarsPeople().then((s) => {
     res.send(circularJSON.stringify(s));
   });
-  // let json = circularJSON.stringify(respond);
-  // res.json(respond);
 };
 
 module.exports = { getFilms };

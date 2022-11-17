@@ -4,10 +4,6 @@ const axios = require("axios");
 const api = "https://swapi.py4e.com/api/people/";
 
 // Service for making the api call
-async function getService() {
-  return axios.get(api);
-}
-
 function getAllStarwarsPeople() {
   let people = [];
   // first page
@@ -37,10 +33,5 @@ function getAllStarwarsPeople() {
     })
     .catch((error) => console.log("Properly handle your exception here"));
 }
-
-// (async () => {
-//   const starwarsPeople = await getAllStarwarsPeople();
-//   console.log("starwarsPeople", starwarsPeople.length);
-// })();
 
 module.exports = getAllStarwarsPeople;
